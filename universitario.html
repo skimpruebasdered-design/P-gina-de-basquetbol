@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liga Universitaria</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background-color:#ffa94d;
+}
+
+header{
+    text-align:center;
+    padding:50px;
+    font-family: Georgia, serif;
+}
+
+h1{
+    font-size:40px;
+}
+
+.volver{
+    position:absolute;
+    left:20px;
+    top:20px;
+    background:black;
+    color:white;
+    padding:10px 15px;
+    text-decoration:none;
+}
+
+.volver:hover{
+    background:orange;
+    color:black;
+}
+
+.accordion {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    width: 90%;
+    margin:10px 5%;
+    border: none;
+    font-size: 18px;
+    border-radius:5px;
+}
+
+.accordion:hover {
+    background-color: orange;
+    color: black;
+}
+
+.panel {
+    display: none;
+    padding: 15px;
+    background-color: white;
+    margin: 10px 5%;
+    border-radius:10px;
+}
+
+.equipo{
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
+    margin-top:10px;
+}
+
+.equipo img{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+}
+
+.equipo p{
+    flex:1;
+    text-align:justify;
+}
+
+/* Responsive */
+@media (max-width:768px){
+    .equipo{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+    }
+    .equipo img{
+        width:220px;
+        height:220px;
+    }
+    .equipo p{
+        text-align:justify;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<a class="volver" href="index.html">← Volver</a>
+
+<header>
+<h1>Liga Universitaria</h1>
+<p>Los equipos más destacados del baloncesto universitario</p>
+</header>
+
+<!-- Pumas UNAM -->
+<button class="accordion">Pumas UNAM</button>
+<div class="panel">
+<div class="equipo">
+<img src="pumas.jpeg">
+<p>
+Los Pumas de la UNAM representan una de las tradiciones más sólidas del baloncesto universitario en México. Fundado en los años 50, el equipo ha logrado múltiples campeonatos universitarios y ha formado jugadores que posteriormente destacaron en la Liga Nacional. Su estilo combina técnica, disciplina y juego colectivo, además de una fuerte conexión con su afición universitaria. La filosofía del equipo busca desarrollar tanto la formación deportiva como académica de sus jugadores, generando un modelo completo de excelencia.
+</p>
+</div>
+</div>
+
+<!-- Borregos ITESM -->
+<button class="accordion">Borregos ITESM</button>
+<div class="panel">
+<div class="equipo">
+<img src="borregos.jpeg">
+<p>
+Los Borregos del ITESM son uno de los equipos más competitivos de la Liga Universitaria. Fundado en Monterrey, este club ha destacado por su entrenamiento riguroso, disciplina táctica y desarrollo de jugadores jóvenes que han llegado a la Liga Nacional. Su estilo de juego es rápido y agresivo, combinando velocidad con precisión en ataque y defensa. Los Borregos fomentan valores de trabajo en equipo, compromiso y excelencia, y son reconocidos por su influencia en el baloncesto universitario mexicano.
+</p>
+</div>
+</div>
+
+<!-- Águilas Blancas IPN -->
+<button class="accordion">Águilas Blancas IPN</button>
+<div class="panel">
+<div class="equipo">
+<img src="aguilas.jpeg">
+<p>
+Las Águilas Blancas del IPN son un equipo emblemático del baloncesto universitario. Fundado en la Ciudad de México, han participado en innumerables torneos nacionales y han formado jugadores destacados que se incorporaron a la Liga Nacional. Su estilo de juego se caracteriza por defensa sólida, presión constante y juego colectivo eficiente. La pasión de sus jugadores y aficionados ha hecho que este club se mantenga como uno de los referentes más importantes dentro del deporte universitario.
+</p>
+</div>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+for(var i=0;i<acc.length;i++){
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if(panel.style.display==="block"){
+            panel.style.display="none";
+        }else{
+            panel.style.display="block";
+        }
+    }
+}
+</script>
+
+</body>
+</html>
