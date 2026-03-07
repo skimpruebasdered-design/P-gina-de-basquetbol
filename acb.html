@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liga ACB</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background-color:#ffa94d;
+}
+
+header{
+    text-align:center;
+    padding:50px;
+    font-family: Georgia, serif;
+}
+
+h1{
+    font-size:40px;
+}
+
+.volver{
+    position:absolute;
+    left:20px;
+    top:20px;
+    background:black;
+    color:white;
+    padding:10px 15px;
+    text-decoration:none;
+}
+
+.volver:hover{
+    background:orange;
+    color:black;
+}
+
+.accordion {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    width: 90%;
+    margin:10px 5%;
+    border: none;
+    font-size: 18px;
+    border-radius:5px;
+}
+
+.accordion:hover {
+    background-color: orange;
+    color: black;
+}
+
+.panel {
+    display: none;
+    padding: 15px;
+    background-color: white;
+    margin: 10px 5%;
+    border-radius:10px;
+}
+
+.equipo{
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
+    margin-top:10px;
+}
+
+.equipo img{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+}
+
+.equipo p{
+    flex:1;
+    text-align:justify;
+}
+
+/* Responsive */
+@media (max-width:768px){
+    .equipo{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+    }
+    .equipo img{
+        width:220px;
+        height:220px;
+    }
+    .equipo p{
+        text-align:justify;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<a class="volver" href="index.html">← Volver</a>
+
+<header>
+<h1>Liga ACB</h1>
+<p>Los equipos más destacados del baloncesto español</p>
+</header>
+
+<!-- Real Madrid Baloncesto -->
+<button class="accordion">Real Madrid Baloncesto</button>
+<div class="panel">
+<div class="equipo">
+<img src="realmadrid.jpeg">
+<p>
+El Real Madrid Baloncesto es uno de los clubes más exitosos de la Liga ACB y de Europa. Fundado en 1931, ha ganado más de 35 títulos de liga española y múltiples EuroLeague, consolidándose como un referente histórico del baloncesto. Jugadores como Sergio Llull, Rudy Fernández y Felipe Reyes han dejado una huella imborrable en la historia del club. Su estilo de juego combina velocidad, precisión técnica y excelente visión de cancha, y cuenta con una de las mejores canteras de España, formando jóvenes talentos que continúan la tradición ganadora.
+</p>
+</div>
+</div>
+
+<!-- FC Barcelona Basket -->
+<button class="accordion">FC Barcelona Basket</button>
+<div class="panel">
+<div class="equipo">
+<img src="barcelona.jpeg">
+<p>
+El FC Barcelona Basket es uno de los clubes más prestigiosos de la Liga ACB, fundado en 1926. Ha ganado múltiples títulos nacionales e internacionales, y es conocido por su disciplina táctica y su estilo de juego colectivo. Jugadores como Juan Carlos Navarro, Nikola Mirotić y Álex Abrines han formado parte de su historia. El club se caracteriza por su defensa sólida, rapidez en transición y juego organizado, siendo un ejemplo de excelencia y profesionalismo en el baloncesto español y europeo.
+</p>
+</div>
+</div>
+
+<!-- Baskonia -->
+<button class="accordion">Baskonia</button>
+<div class="panel">
+<div class="equipo">
+<img src="baskonia.jpeg">
+<p>
+Baskonia, también conocido como Saski Baskonia, es un club de referencia en la Liga ACB y en competiciones europeas. Fundado en 1959 en Vitoria-Gasteiz, ha ganado varios campeonatos nacionales y se ha consolidado como un equipo competitivo de alto nivel. Su estilo combina defensa intensa, juego rápido y un gran enfoque táctico. Jugadores como Fernando San Emeterio y Luis Scola han formado parte de su historia, aportando experiencia y talento. Baskonia destaca por su capacidad de desarrollar jóvenes talentos y mantener un nivel competitivo constante.
+</p>
+</div>
+</div>
+
+<!-- Valencia Basket -->
+<button class="accordion">Valencia Basket</button>
+<div class="panel">
+<div class="equipo">
+<img src="valencia.jpeg">
+<p>
+Valencia Basket es uno de los equipos más importantes del baloncesto español moderno. Fundado en 1986, ha logrado consolidarse con títulos nacionales y destacadas participaciones en EuroLeague y EuroCup. Su estilo de juego se basa en la disciplina, estrategia y coordinación en equipo. Jugadores como Bojan Dubljević y Rafa Martínez han contribuido a sus éxitos, consolidando al club como un referente competitivo en España. Valencia Basket se distingue por su excelente gestión y desarrollo de jóvenes talentos, garantizando su competitividad a largo plazo.
+</p>
+</div>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+for(var i=0;i<acc.length;i++){
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if(panel.style.display==="block"){
+            panel.style.display="none";
+        }else{
+            panel.style.display="block";
+        }
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NBA</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background-color:#ffa94d;
+}
+
+header{
+    text-align:center;
+    padding:50px;
+    font-family: Georgia, serif;
+}
+
+h1{
+    font-size:40px;
+}
+
+.volver{
+    position:absolute;
+    left:20px;
+    top:20px;
+    background:black;
+    color:white;
+    padding:10px 15px;
+    text-decoration:none;
+}
+
+.volver:hover{
+    background:orange;
+    color:black;
+}
+
+.accordion {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    width: 90%;
+    margin:10px 5%;
+    border: none;
+    font-size: 18px;
+    border-radius:5px;
+}
+
+.accordion:hover {
+    background-color: orange;
+    color: black;
+}
+
+.panel {
+    display: none;
+    padding: 15px;
+    background-color: white;
+    margin: 10px 5%;
+    border-radius:10px;
+}
+
+.equipo{
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
+    margin-top:10px;
+}
+
+.equipo img{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+}
+
+.equipo p{
+    flex:1;
+    text-align:justify;
+}
+
+/* Responsive */
+@media (max-width:768px){
+    .equipo{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+    }
+    .equipo img{
+        width:220px;
+        height:220px;
+    }
+    .equipo p{
+        text-align:justify;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<a class="volver" href="index.html">← Volver</a>
+
+<header>
+<h1>NBA</h1>
+<p>Los equipos más destacados de la National Basketball Association</p>
+</header>
+
+<!-- Los Angeles Lakers -->
+<button class="accordion">Los Angeles Lakers</button>
+<div class="panel">
+<div class="equipo">
+<img src="lakers.jpeg">
+<p>
+Los Angeles Lakers son uno de los equipos más icónicos de la NBA, con una historia que abarca más de 70 años. Fundado en 1947, inicialmente en Minneapolis, se trasladaron a Los Ángeles en 1960. Conocidos como “Showtime Lakers” en los años 80, su estilo de juego rápido y ofensivo revolucionó el baloncesto profesional. Leyendas como Magic Johnson, Kareem Abdul-Jabbar, Shaquille O'Neal, Kobe Bryant y LeBron James han vestido su uniforme, llevando al equipo a ganar un total de 17 campeonatos, empatados con Boston Celtics como los máximos ganadores de la NBA. La franquicia ha sido clave en la globalización del baloncesto, inspirando a millones de aficionados y creando una identidad única basada en la excelencia, disciplina y espectáculo deportivo.
+</p>
+</div>
+</div>
+
+<!-- Chicago Bulls -->
+<button class="accordion">Chicago Bulls</button>
+<div class="panel">
+<div class="equipo">
+<img src="bulls.jpeg">
+<p>
+Los Chicago Bulls alcanzaron fama mundial en la década de los 90 gracias a Michael Jordan, considerado por muchos como el mejor jugador de todos los tiempos. Fundado en 1966, el equipo ganó seis campeonatos de la NBA en ocho años, dominando la liga con un estilo de juego intenso y táctico. La combinación de Jordan con Scottie Pippen y la dirección de Phil Jackson creó una dinastía que aún hoy inspira a jugadores y aficionados. Los Bulls son conocidos por su uniforme icónico rojo y negro, y su legado ha influido en la cultura, moda y publicidad del deporte. A lo largo de los años, otros jugadores destacados han continuado la historia de esta franquicia, manteniéndola competitiva y respetada en la liga.
+</p>
+</div>
+</div>
+
+<!-- Golden State Warriors -->
+<button class="accordion">Golden State Warriors</button>
+<div class="panel">
+<div class="equipo">
+<img src="warriors.jpeg">
+<p>
+Golden State Warriors es una de las franquicias más revolucionarias de la NBA moderna. Fundado en 1946, el equipo ha experimentado múltiples etapas de éxito y reconstrucción, alcanzando la cima durante la última década gracias a Stephen Curry, Klay Thompson y Draymond Green. Conocidos por su estilo ofensivo basado en triples y velocidad, los Warriors han ganado múltiples campeonatos recientes y han cambiado la manera en que se juega el baloncesto profesional, priorizando el tiro de larga distancia y la ofensiva colectiva. Además de los logros recientes, la franquicia posee una rica historia con jugadores destacados como Wilt Chamberlain y Rick Barry, consolidando su reputación como uno de los equipos más influyentes y admirados de la NBA.
+</p>
+</div>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+for(var i=0;i<acc.length;i++){
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if(panel.style.display==="block"){
+            panel.style.display="none";
+        }else{
+            panel.style.display="block";
+        }
+    }
+}
+</script>
+
+</body>
+</html>

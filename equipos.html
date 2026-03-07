@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Equipos de Básquet</title>
+
+<style>
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background-color:#ffa94d;
+}
+
+header{
+text-align:center;
+padding:30px;
+}
+
+h1{
+font-size:40px;
+}
+
+h2{
+margin-left:40px;
+}
+
+.volver{
+position:absolute;
+left:20px;
+top:20px;
+background:black;
+color:white;
+padding:10px 15px;
+text-decoration:none;
+}
+
+.volver:hover{
+background:orange;
+color:black;
+}
+
+.accordion {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    width: 90%;
+    margin:10px 5%;
+    border: none;
+    font-size: 18px;
+    border-radius:5px;
+}
+
+.accordion:hover {
+    background-color: orange;
+    color: black;
+}
+
+.panel {
+    display: none;
+    padding: 15px;
+    background-color: white;
+    margin: 10px 5%;
+    border-radius:10px;
+}
+
+.equipo{
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
+    margin-top:10px;
+}
+
+.equipo img{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+}
+
+.equipo p{
+    flex:1;
+    text-align:justify;
+}
+
+/* Responsive */
+@media (max-width:768px){
+    .equipo{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+    }
+    .equipo img{
+        width:220px;
+        height:220px;
+    }
+    .equipo p{
+        text-align:justify;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<a class="volver" href="index.html">← Volver</a>
+
+<header>
+<h1>Equipos de Básquet</h1>
+<p>Equipos de diferentes ligas</p>
+</header>
+
+<h2>NBA</h2>
+<button class="accordion">Los Angeles Lakers</button>
+<div class="panel">
+<div class="equipo">
+<img src="lakers.jpeg">
+<p>
+Los Angeles Lakers es uno de los equipos más históricos de la NBA, con leyendas como Magic Johnson, Kareem Abdul-Jabbar, Kobe Bryant y LeBron James. Han ganado numerosos campeonatos y son conocidos por su estilo ofensivo espectacular llamado “Showtime”.
+</p>
+</div>
+</div>
+
+<button class="accordion">Chicago Bulls</button>
+<div class="panel">
+<div class="equipo">
+<img src="bulls.jpeg">
+<p>
+Los Chicago Bulls se hicieron famosos en los 90 con Michael Jordan, ganando seis campeonatos de la NBA. Son conocidos por su fuerte defensa y gran capacidad ofensiva, y ayudaron a popularizar el baloncesto en todo el mundo.
+</p>
+</div>
+</div>
+
+<button class="accordion">Golden State Warriors</button>
+<div class="panel">
+<div class="equipo">
+<img src="warriors.jpeg">
+<p>
+Golden State Warriors domina la NBA moderna con su estilo basado en tiros de tres puntos y velocidad ofensiva. Stephen Curry revolucionó el juego con su precisión en triples.
+</p>
+</div>
+</div>
+
+<h2>EuroLeague</h2>
+<button class="accordion">Real Madrid Baloncesto</button>
+<div class="panel">
+<div class="equipo">
+<img src="realmadrid.jpeg">
+<p>
+Real Madrid Baloncesto es uno de los equipos más exitosos de Europa, con múltiples títulos nacionales e internacionales y jugadores legendarios como Luka Dončić y Sergio Llull. Su estilo combina intensidad ofensiva y disciplina táctica.
+</p>
+</div>
+</div>
+
+<button class="accordion">FC Barcelona Basket</button>
+<div class="panel">
+<div class="equipo">
+<img src="barcelona.jpeg">
+<p>
+El Barcelona Basket es uno de los clubes más importantes de Europa. Ha ganado numerosos campeonatos y desarrolla jugadores de gran talento, manteniendo un estilo técnico y competitivo.
+</p>
+</div>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+for(var i=0;i<acc.length;i++){
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if(panel.style.display==="block"){
+            panel.style.display="none";
+        }else{
+            panel.style.display="block";
+        }
+    }
+}
+</script>
+
+</body>
+</html>

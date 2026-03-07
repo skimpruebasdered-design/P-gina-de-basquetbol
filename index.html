@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pasión por el Básquet</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background-color:#ffa94d;
+}
+
+header{
+    background-image: url("cancha.jpeg"); 
+    background-size:cover; 
+    background-position: center; 
+    color:white;
+    text-align:center; 
+    padding:50px 40px; 
+    font-family: Georgia, serif;
+}
+
+header h1{
+    font-size:45px;
+    letter-spacing:2px;
+}
+
+nav{ 
+    background-color:black; 
+    text-align:left; 
+}
+
+nav a{ 
+    color:white; 
+    text-decoration:none; 
+    padding:15px; 
+    display:inline-block; 
+}
+
+nav a:hover{ 
+    background-color:orange; 
+    color:black; 
+}
+
+.dropdown{ 
+    display:inline-block;
+    position:relative; 
+}
+
+.dropdown-content{
+    display:none;
+    position:absolute; 
+    background-color:gray; 
+}
+
+.dropdown-content a{ 
+    display:block; 
+}
+
+.dropdown:hover .dropdown-content{ 
+    display:block; 
+}
+
+.contenedor{ 
+    display:flex; 
+    padding:20px; 
+    flex-wrap: wrap;
+}
+
+main{ 
+    width:70%; 
+}
+
+aside{ 
+    width:30%; 
+    text-align:center; 
+}
+
+aside img{ 
+    width:120px; 
+    height:120px; 
+    border-radius:50%; 
+    display:block; 
+    margin:15px auto; 
+}
+
+footer{ 
+    background-color:black;
+    color:white;
+    text-align:center; 
+    padding:15px; 
+}
+
+/* Responsive */
+@media (max-width:768px){
+    .contenedor{
+        flex-direction: column;
+    }
+    main, aside{
+        width:100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header> 
+    <h1>Pasión por el Básquet</h1> 
+    <h3>Las estrellas del baloncesto mundial</h3> 
+</header>
+
+<nav> 
+    <a href="jugadores.html">Jugadores</a> 
+    <a href="equipos.html">Equipos</a> 
+
+    <div class="dropdown"> 
+        <a href="#">Ligas</a> 
+        <div class="dropdown-content"> 
+            <a href="nba.html">NBA</a> 
+            <a href="euroleague.html">EuroLeague</a> 
+            <a href="acb.html">Liga ACB</a> 
+            <a href="nacional.html">Liga Nacional</a> 
+            <a href="universitario.html">Baloncesto Universitario</a> 
+        </div>
+    </div>
+
+    <a href="historia.html">Historia</a> 
+    <a href="acerca.html">Acerca de</a> 
+</nav>
+
+<div class="contenedor"> 
+
+    <main> 
+        <h2>Bienvenidos</h2> 
+        Bienvenidos a nuestro sitio web dedicado al mundo del básquetbol. Aquí encontrarás información sobre algunos de los jugadores más famosos y talentosos de la historia. El básquet es un deporte emocionante que combina velocidad, habilidad y estrategia dentro de la cancha.
+        <br><br><hr>
+        En esta página podrás conocer más sobre grandes estrellas del baloncesto, sus logros, su estilo de juego y su impacto en el deporte. Nuestro objetivo es compartir la pasión por el básquet y mostrar a los jugadores que han marcado la historia de este increíble deporte. 🏀🔥
+    </main>
+
+    <aside> 
+        <h3>Stephen Curry</h3>
+        <img src="curry.jpeg"> 
+
+        <h3>LeBron James</h3>
+        <img src="lebron.jpeg">
+
+        <h3>Michael Jordan</h3>
+        <img src="jordan.jpeg">
+    </aside>
+
+</div>
+
+<footer> 
+    <p>Gracias por visitar nuestra página de básquet</p>
+    <p>Inspirando a nuevas generaciones del deporte</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liga Nacional</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background-color:#ffa94d;
+}
+
+header{
+    text-align:center;
+    padding:50px;
+    font-family: Georgia, serif;
+}
+
+h1{
+    font-size:40px;
+}
+
+.volver{
+    position:absolute;
+    left:20px;
+    top:20px;
+    background:black;
+    color:white;
+    padding:10px 15px;
+    text-decoration:none;
+}
+
+.volver:hover{
+    background:orange;
+    color:black;
+}
+
+.accordion {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    width: 90%;
+    margin:10px 5%;
+    border: none;
+    font-size: 18px;
+    border-radius:5px;
+}
+
+.accordion:hover {
+    background-color: orange;
+    color: black;
+}
+
+.panel {
+    display: none;
+    padding: 15px;
+    background-color: white;
+    margin: 10px 5%;
+    border-radius:10px;
+}
+
+.equipo{
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
+    margin-top:10px;
+}
+
+.equipo img{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+}
+
+.equipo p{
+    flex:1;
+    text-align:justify;
+}
+
+/* Responsive */
+@media (max-width:768px){
+    .equipo{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+    }
+    .equipo img{
+        width:220px;
+        height:220px;
+    }
+    .equipo p{
+        text-align:justify;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<a class="volver" href="index.html">← Volver</a>
+
+<header>
+<h1>Liga Nacional</h1>
+<p>Los equipos más destacados del baloncesto nacional</p>
+</header>
+
+<!-- Pioneros de Querétaro -->
+<button class="accordion">Pioneros de Querétaro</button>
+<div class="panel">
+<div class="equipo">
+<img src="pioneros.jpeg">
+<p>
+Los Pioneros de Querétaro son un equipo destacado de la Liga Nacional, conocido por su compromiso con el desarrollo de jóvenes talentos y su participación competitiva en torneos nacionales. Fundado en 2009, el club ha demostrado crecimiento constante, logrando consolidarse como un referente del baloncesto mexicano. Su estilo de juego se basa en velocidad, coordinación y táctica ofensiva, combinando experiencia de veteranos con la energía de nuevos jugadores. Han destacado en torneos locales y nacionales, inspirando a aficionados y fomentando el crecimiento del baloncesto en la región.
+</p>
+</div>
+</div>
+
+<!-- Fuerza Regia -->
+<button class="accordion">Fuerza Regia</button>
+<div class="panel">
+<div class="equipo">
+<img src="fuerzaregia.jpeg">
+<p>
+Fuerza Regia es uno de los equipos más fuertes de la Liga Nacional, con múltiples campeonatos ganados y un equipo que combina talento local e internacional. Fundado en Monterrey, ha destacado por su estilo físico, disciplinado y táctico. Jugadores como Lorenzo Mata y Juan Toscano-Anderson han sido parte de su historia reciente, fortaleciendo la reputación del club en competencias nacionales e internacionales. Su estructura profesional y enfoque en desarrollo de talento asegura que siempre estén en la pelea por los títulos.
+</p>
+</div>
+</div>
+
+<!-- Soles de Mexicali -->
+<button class="accordion">Soles de Mexicali</button>
+<div class="panel">
+<div class="equipo">
+<img src="soles.jpeg">
+<p>
+Los Soles de Mexicali son un equipo icónico de la Liga Nacional, reconocidos por su estilo ofensivo y disciplina táctica. Fundado en 2001, el club ha logrado múltiples campeonatos nacionales y ha formado jugadores de gran nivel que han destacado en la liga y en selecciones nacionales. Su estrategia combina velocidad, tiros precisos y defensa intensa, lo que los convierte en un equipo competitivo y respetado dentro del baloncesto mexicano. Además, su afición apasionada contribuye al ambiente único de sus partidos.
+</p>
+</div>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+for(var i=0;i<acc.length;i++){
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if(panel.style.display==="block"){
+            panel.style.display="none";
+        }else{
+            panel.style.display="block";
+        }
+    }
+}
+</script>
+
+</body>
+</html>
