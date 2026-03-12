@@ -108,8 +108,8 @@ footer{
 #balon{
 position:fixed;
 width:140px;
-left:200px;
-top:200px;
+left:100px;
+top:100px;
 cursor:grab;
 z-index:999;
 }
@@ -251,11 +251,11 @@ if(!arrastrando){
 x+=dx;
 y+=dy;
 
-if(x+70>window.innerWidth || x<0){
+if(x+140>window.innerWidth || x<0){
 dx=-dx;
 }
 
-if(y+70>window.innerHeight || y<0){
+if(y+140>window.innerHeight || y<0){
 dy=-dy;
 }
 
@@ -272,5 +272,6 @@ setInterval(moverBalon,20);
 
 </body>
 </html>
+
 
 
