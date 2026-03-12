@@ -94,7 +94,6 @@ footer{
     padding:15px; 
 }
 
-/* Responsive */
 @media (max-width:768px){
     .contenedor{
         flex-direction: column;
@@ -104,26 +103,29 @@ footer{
     }
 }
 
-/* BALON */
+/* BALÓN */
+
 #balon{
 position:fixed;
-width:140px;
+width:120px;
 left:100px;
 top:100px;
 cursor:grab;
 z-index:999;
 }
+
 </style>
 </head>
 
 <body onload="sonidoInicio()">
 
 <header> 
-    <h1>Pasión por el Básquet</h1> 
-    <h3>Las estrellas del baloncesto mundial</h3> 
+<h1>Pasión por el Básquet</h1> 
+<h3>Las estrellas del baloncesto mundial</h3> 
 </header>
 
 <nav> 
+
 <a href="jugadores.html" onclick="sonidoNav(event,'jugadores.html')">Jugadores</a> 
 <a href="equipos.html" onclick="sonidoNav(event,'equipos.html')">Equipos</a> 
 
@@ -149,11 +151,13 @@ z-index:999;
 <a href="podcast.html" onclick="sonidoNav(event,'podcast.html')">Podcast</a>
 
 <a href="acerca.html" onclick="sonidoNav(event,'acerca.html')">Acerca de</a> 
+
 </nav>
 
 <div class="contenedor"> 
 
 <main> 
+
 <h2>Bienvenidos</h2> 
 
 Bienvenidos a nuestro sitio web dedicado al mundo del básquetbol. Aquí encontrarás información sobre algunos de los jugadores más famosos y talentosos de la historia. El básquet es un deporte emocionante que combina velocidad, habilidad y estrategia dentro de la cancha.
@@ -165,6 +169,7 @@ En esta página podrás conocer más sobre grandes estrellas del baloncesto, sus
 </main>
 
 <aside> 
+
 <h3>Stephen Curry</h3>
 <img src="curry.jpeg"> 
 
@@ -173,6 +178,7 @@ En esta página podrás conocer más sobre grandes estrellas del baloncesto, sus
 
 <h3>Michael Jordan</h3>
 <img src="jordan.jpeg">
+
 </aside>
 
 </div>
@@ -182,34 +188,43 @@ En esta página podrás conocer más sobre grandes estrellas del baloncesto, sus
 <p>Inspirando a nuevas generaciones del deporte</p>
 </footer>
 
-<!-- BALON -->
+<!-- BALÓN -->
+
 <img src="balon-removebg-preview.png" id="balon">
 
 <!-- SONIDOS -->
+
 <audio id="sonidoCanasta" src="canasta.aac"></audio>
 <audio id="sonidoInicio" src="inicio.mpeg"></audio>
 
 <script>
 
 function sonidoNav(event,pagina){
+
 event.preventDefault();
 
 let sonido=document.getElementById("sonidoCanasta");
+
 sonido.currentTime=0;
 sonido.play();
 
 setTimeout(function(){
 window.location.href=pagina;
 },1000);
+
 }
 
 function sonidoInicio(){
+
 let inicio=document.getElementById("sonidoInicio");
+
 inicio.currentTime=0;
 inicio.play();
+
 }
 
-/* MOVIMIENTO DEL BALON */
+
+/* BALÓN */
 
 let balon=document.getElementById("balon");
 
@@ -219,30 +234,72 @@ let y=100;
 let dx=3;
 let dy=3;
 
+let tamaño=120;
+
 let arrastrando=false;
 
-/* agarrar balón */
+
+/* MOUSE (PC) */
+
 balon.addEventListener("mousedown",function(){
+
 arrastrando=true;
+
 });
 
 document.addEventListener("mouseup",function(){
+
 arrastrando=false;
+
 });
 
 document.addEventListener("mousemove",function(e){
 
 if(arrastrando){
-x=e.clientX-35;
-y=e.clientY-35;
+
+x=e.clientX-(tamaño/2);
+y=e.clientY-(tamaño/2);
 
 balon.style.left=x+"px";
 balon.style.top=y+"px";
+
 }
 
 });
 
-/* rebote */
+
+/* DEDO (CELULAR) */
+
+balon.addEventListener("touchstart",function(){
+
+arrastrando=true;
+
+});
+
+document.addEventListener("touchend",function(){
+
+arrastrando=false;
+
+});
+
+document.addEventListener("touchmove",function(e){
+
+if(arrastrando){
+
+let dedo=e.touches[0];
+
+x=dedo.clientX-(tamaño/2);
+y=dedo.clientY-(tamaño/2);
+
+balon.style.left=x+"px";
+balon.style.top=y+"px";
+
+}
+
+});
+
+
+/* REBOTE */
 
 function moverBalon(){
 
@@ -251,12 +308,16 @@ if(!arrastrando){
 x+=dx;
 y+=dy;
 
-if(x+140>window.innerWidth || x<0){
+if(x+tamaño>window.innerWidth || x<0){
+
 dx=-dx;
+
 }
 
-if(y+140>window.innerHeight || y<0){
+if(y+tamaño>window.innerHeight || y<0){
+
 dy=-dy;
+
 }
 
 balon.style.left=x+"px";
@@ -272,6 +333,3 @@ setInterval(moverBalon,20);
 
 </body>
 </html>
-
-
-
