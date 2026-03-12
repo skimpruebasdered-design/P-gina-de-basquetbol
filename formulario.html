@@ -137,6 +137,25 @@ margin-top:40px;
 <footer>
 <p>Gracias por visitar nuestra página de básquet</p>
 </footer>
+<!-- AUDIO CANASTA -->
+<audio id="sonidoCanasta">
+<source src="canasta.aac" type="audio/aac">
+</audio>
 
+<script>
+
+var sonido = document.getElementById("sonidoCanasta");
+
+var botones = document.querySelectorAll("a, button");
+
+botones.forEach(function(boton){
+boton.addEventListener("click", function(){
+sonido.currentTime = 0;
+sonido.play();
+});
+});
+
+</script>
 </body>
+
 </html>
