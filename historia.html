@@ -123,6 +123,39 @@ Tu navegador no soporta video.
 <footer>
 <p>Gracias por visitar nuestra sección de Historia del Básquet</p>
 </footer>
+<audio id="sonidoCanasta">
+<source src="canasta.aac" type="audio/aac">
+</audio>
 
+<script>
+
+var sonido = document.getElementById("sonidoCanasta");
+
+var botones = document.querySelectorAll("a, button");
+
+botones.forEach(function(boton){
+
+boton.addEventListener("click", function(e){
+
+var link = this.getAttribute("href");
+
+if(link){
+e.preventDefault();
+
+sonido.currentTime = 0;
+sonido.play();
+
+setTimeout(function(){
+window.location.href = link;
+},700);
+
+}
+
+});
+
+});
+
+</script>
 </body>
 </html>
+
