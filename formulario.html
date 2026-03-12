@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario de Básquet</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background-color:#ffa94d;
+}
+
+.volver{
+position:absolute;
+left:20px;
+top:20px;
+background:black;
+color:white;
+padding:10px 15px;
+text-decoration:none;
+}
+
+.volver:hover{
+background:orange;
+color:black;
+}
+
+header{
+text-align:center;
+padding:40px;
+font-family:Georgia, serif;
+}
+
+.formulario{
+background:white;
+width:90%;
+max-width:600px;
+margin:40px auto;
+padding:30px;
+border-radius:10px;
+}
+
+.formulario label{
+display:block;
+margin-top:15px;
+font-weight:bold;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea{
+width:100%;
+padding:10px;
+margin-top:5px;
+border-radius:5px;
+border:1px solid gray;
+}
+
+.formulario button{
+margin-top:20px;
+padding:12px;
+width:100%;
+background:black;
+color:white;
+border:none;
+font-size:16px;
+cursor:pointer;
+}
+
+.formulario button:hover{
+background:orange;
+color:black;
+}
+
+footer{
+background:black;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<a class="volver" href="index.html">← Volver</a>
+
+<header>
+<h1>Formulario de Básquet</h1>
+<p>Comparte tu opinión sobre este deporte</p>
+</header>
+
+<div class="formulario">
+
+<form>
+
+<label>Nombre:</label>
+<input type="text" placeholder="Escribe tu nombre">
+
+<label>Edad:</label>
+<input type="number" placeholder="Escribe tu edad">
+
+<label>Correo electrónico:</label>
+<input type="email" placeholder="Escribe tu correo">
+
+<label>Jugador favorito:</label>
+<select>
+<option>Michael Jordan</option>
+<option>LeBron James</option>
+<option>Stephen Curry</option>
+<option>Kobe Bryant</option>
+<option>Otro</option>
+</select>
+
+<label>¿Cuánto te gusta el básquet?</label>
+<select>
+<option>Mucho</option>
+<option>Normal</option>
+<option>Poco</option>
+</select>
+
+<label>Comentario:</label>
+<textarea rows="5" placeholder="Escribe tu opinión sobre el básquet"></textarea>
+
+<button type="submit">Enviar</button>
+
+</form>
+
+</div>
+
+<footer>
+<p>Gracias por visitar nuestra página de básquet</p>
+</footer>
+
+</body>
+</html>
