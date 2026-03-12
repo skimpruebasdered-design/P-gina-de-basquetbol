@@ -176,7 +176,26 @@ for(var i=0;i<acc.length;i++){
         }
     }
 }
+<!-- AUDIO CANASTA -->
+<audio id="sonidoCanasta">
+<source src="canasta.aac" type="audio/aac">
+</audio>
+
+<script>
+
+var sonido = document.getElementById("sonidoCanasta");
+
+var botones = document.querySelectorAll("a, button");
+
+botones.forEach(function(boton){
+boton.addEventListener("click", function(){
+sonido.currentTime = 0;
+sonido.play();
+});
+});
+
 </script>
 
 </body>
+
 </html>
