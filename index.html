@@ -94,7 +94,6 @@ footer{
     padding:15px; 
 }
 
-/* Responsive */
 @media (max-width:768px){
     .contenedor{
         flex-direction: column;
@@ -114,72 +113,87 @@ footer{
 </header>
 
 <nav> 
-    <a href="jugadores.html" onclick="sonidoNav()">Jugadores</a> 
-    <a href="equipos.html" onclick="sonidoNav()">Equipos</a> 
+<a href="jugadores.html" onclick="sonidoNav(event,'jugadores.html')">Jugadores</a> 
+<a href="equipos.html" onclick="sonidoNav(event,'equipos.html')">Equipos</a> 
 
-    <div class="dropdown"> 
-        <a href="#" onclick="sonidoNav()">Ligas</a> 
-        <div class="dropdown-content"> 
-            <a href="nba.html" onclick="sonidoNav()">NBA</a> 
-            <a href="euroleague.html" onclick="sonidoNav()">EuroLeague</a> 
-            <a href="acb.html" onclick="sonidoNav()">Liga ACB</a> 
-            <a href="nacional.html" onclick="sonidoNav()">Liga Nacional</a> 
-            <a href="universitario.html" onclick="sonidoNav()">Baloncesto Universitario</a> 
-        </div>
-    </div>
+<div class="dropdown"> 
+<a href="#" onclick="event.preventDefault()">Ligas</a> 
 
-    <a href="historia.html" onclick="sonidoNav()">Historia</a>
+<div class="dropdown-content"> 
+<a href="nba.html" onclick="sonidoNav(event,'nba.html')">NBA</a> 
+<a href="euroleague.html" onclick="sonidoNav(event,'euroleague.html')">EuroLeague</a> 
+<a href="acb.html" onclick="sonidoNav(event,'acb.html')">Liga ACB</a> 
+<a href="nacional.html" onclick="sonidoNav(event,'nacional.html')">Liga Nacional</a> 
+<a href="universitario.html" onclick="sonidoNav(event,'universitario.html')">Baloncesto Universitario</a> 
+</div>
 
-    <a href="formulario.html" onclick="sonidoNav()">Formulario</a>
+</div>
 
-    <a href="juegos.html" onclick="sonidoNav()">Juegos</a>
+<a href="historia.html" onclick="sonidoNav(event,'historia.html')">Historia</a>
 
-    <a href="podcast.html" onclick="sonidoNav()">Podcast</a>
+<a href="formulario.html" onclick="sonidoNav(event,'formulario.html')">Formulario</a>
 
-    <a href="acerca.html" onclick="sonidoNav()">Acerca de</a> 
+<a href="juegos.html" onclick="sonidoNav(event,'juegos.html')">Juegos</a>
+
+<a href="podcast.html" onclick="sonidoNav(event,'podcast.html')">Podcast</a>
+
+<a href="acerca.html" onclick="sonidoNav(event,'acerca.html')">Acerca de</a> 
 </nav>
 
 <div class="contenedor"> 
 
-    <main> 
-        <h2>Bienvenidos</h2> 
-        Bienvenidos a nuestro sitio web dedicado al mundo del básquetbol. Aquí encontrarás información sobre algunos de los jugadores más famosos y talentosos de la historia. El básquet es un deporte emocionante que combina velocidad, habilidad y estrategia dentro de la cancha.
-        <br><br><hr>
-        En esta página podrás conocer más sobre grandes estrellas del baloncesto, sus logros, su estilo de juego y su impacto en el deporte. Nuestro objetivo es compartir la pasión por el básquet y mostrar a los jugadores que han marcado la historia de este increíble deporte. 🏀🔥
-    </main>
+<main> 
+<h2>Bienvenidos</h2> 
 
-    <aside> 
-        <h3>Stephen Curry</h3>
-        <img src="curry.jpeg"> 
+Bienvenidos a nuestro sitio web dedicado al mundo del básquetbol. Aquí encontrarás información sobre algunos de los jugadores más famosos y talentosos de la historia. El básquet es un deporte emocionante que combina velocidad, habilidad y estrategia dentro de la cancha.
 
-        <h3>LeBron James</h3>
-        <img src="lebron.jpeg">
+<br><br><hr>
 
-        <h3>Michael Jordan</h3>
-        <img src="jordan.jpeg">
-    </aside>
+En esta página podrás conocer más sobre grandes estrellas del baloncesto, sus logros, su estilo de juego y su impacto en el deporte. Nuestro objetivo es compartir la pasión por el básquet y mostrar a los jugadores que han marcado la historia de este increíble deporte. 🏀🔥
+
+</main>
+
+<aside> 
+<h3>Stephen Curry</h3>
+<img src="curry.jpeg"> 
+
+<h3>LeBron James</h3>
+<img src="lebron.jpeg">
+
+<h3>Michael Jordan</h3>
+<img src="jordan.jpeg">
+</aside>
 
 </div>
 
 <footer> 
-    <p>Gracias por visitar nuestra página de básquet</p>
-    <p>Inspirando a nuevas generaciones del deporte</p>
+<p>Gracias por visitar nuestra página de básquet</p>
+<p>Inspirando a nuevas generaciones del deporte</p>
 </footer>
 
-<!-- Sonidos -->
+<!-- SONIDOS -->
 <audio id="sonidoCanasta" src="canasta.mpeg"></audio>
 <audio id="sonidoInicio" src="inicio.mpeg"></audio>
 
 <script>
-function sonidoNav(){
-document.getElementById("sonidoCanasta").play();
+
+function sonidoNav(event,pagina){
+event.preventDefault();
+
+let sonido = document.getElementById("sonidoCanasta");
+sonido.play();
+
+setTimeout(function(){
+window.location.href = pagina;
+},1000);
+
 }
 
 function sonidoInicio(){
 document.getElementById("sonidoInicio").play();
 }
+
 </script>
 
 </body>
 </html>
-
