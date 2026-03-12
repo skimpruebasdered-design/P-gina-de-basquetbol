@@ -181,16 +181,20 @@ function sonidoNav(event,pagina){
 event.preventDefault();
 
 let sonido = document.getElementById("sonidoCanasta");
+
+sonido.currentTime = 0;
 sonido.play();
 
 setTimeout(function(){
 window.location.href = pagina;
-},1000);
+},1200);
 
 }
 
 function sonidoInicio(){
-document.getElementById("sonidoInicio").play();
+let inicio = document.getElementById("sonidoInicio");
+inicio.currentTime = 0;
+inicio.play();
 }
 
 </script>
