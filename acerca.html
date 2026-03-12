@@ -66,7 +66,12 @@ footer{
 
 <body>
 
-<a class="volver" href="index.html">← Volver</a>
+<!-- AUDIO CANASTA -->
+<audio id="sonidoCanasta">
+<source src="canasta.aac" type="audio/aac">
+</audio>
+
+<a class="volver" href="index.html" onclick="sonidoVolver()">← Volver</a>
 
 <header>
 <h1>Acerca de</h1>
@@ -90,5 +95,14 @@ Espero que al navegar por esta página aprendas más sobre el básquetbol y disf
 <p>Proyecto escolar de Angel Gabriel Pool Balam, 17 años</p>
 </footer>
 
+<script>
+
+function sonidoVolver(){
+document.getElementById("sonidoCanasta").play();
+}
+
+</script>
+
 </body>
+
 </html>
