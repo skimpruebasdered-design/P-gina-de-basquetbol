@@ -106,7 +106,7 @@ footer{
 </style>
 </head>
 
-<body>
+<body onload="sonidoInicio()">
 
 <header> 
     <h1>Pasión por el Básquet</h1> 
@@ -114,27 +114,29 @@ footer{
 </header>
 
 <nav> 
-    <a href="jugadores.html">Jugadores</a> 
-    <a href="equipos.html">Equipos</a> 
+    <a href="jugadores.html" onclick="sonidoNav()">Jugadores</a> 
+    <a href="equipos.html" onclick="sonidoNav()">Equipos</a> 
 
     <div class="dropdown"> 
-        <a href="#">Ligas</a> 
+        <a href="#" onclick="sonidoNav()">Ligas</a> 
         <div class="dropdown-content"> 
-            <a href="nba.html">NBA</a> 
-            <a href="euroleague.html">EuroLeague</a> 
-            <a href="acb.html">Liga ACB</a> 
-            <a href="nacional.html">Liga Nacional</a> 
-            <a href="universitario.html">Baloncesto Universitario</a> 
+            <a href="nba.html" onclick="sonidoNav()">NBA</a> 
+            <a href="euroleague.html" onclick="sonidoNav()">EuroLeague</a> 
+            <a href="acb.html" onclick="sonidoNav()">Liga ACB</a> 
+            <a href="nacional.html" onclick="sonidoNav()">Liga Nacional</a> 
+            <a href="universitario.html" onclick="sonidoNav()">Baloncesto Universitario</a> 
         </div>
     </div>
 
-    <a href="historia.html">Historia</a> 
+    <a href="historia.html" onclick="sonidoNav()">Historia</a>
 
-    <a href="juegos.html">Juegos</a>
+    <a href="formulario.html" onclick="sonidoNav()">Formulario</a>
 
-    <a href="podcast.html">Podcast</a>
+    <a href="juegos.html" onclick="sonidoNav()">Juegos</a>
 
-    <a href="acerca.html">Acerca de</a> 
+    <a href="podcast.html" onclick="sonidoNav()">Podcast</a>
+
+    <a href="acerca.html" onclick="sonidoNav()">Acerca de</a> 
 </nav>
 
 <div class="contenedor"> 
@@ -163,6 +165,20 @@ footer{
     <p>Gracias por visitar nuestra página de básquet</p>
     <p>Inspirando a nuevas generaciones del deporte</p>
 </footer>
+
+<!-- Sonidos -->
+<audio id="sonidoCanasta" src="canasta.mp3"></audio>
+<audio id="sonidoInicio" src="inicio.mp3"></audio>
+
+<script>
+function sonidoNav(){
+document.getElementById("sonidoCanasta").play();
+}
+
+function sonidoInicio(){
+document.getElementById("sonidoInicio").play();
+}
+</script>
 
 </body>
 </html>
