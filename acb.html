@@ -101,7 +101,12 @@ h1{
 
 <body>
 
-<a class="volver" href="index.html">← Volver</a>
+<!-- AUDIO CANASTA -->
+<audio id="sonidoCanasta">
+<source src="canasta.aac" type="audio/aac">
+</audio>
+
+<a class="volver" href="index.html" onclick="sonidoVolver()">← Volver</a>
 
 <header>
 <h1>Liga ACB</h1>
@@ -153,6 +158,11 @@ Valencia Basket es uno de los equipos más importantes del baloncesto español m
 </div>
 
 <script>
+
+function sonidoVolver(){
+document.getElementById("sonidoCanasta").play();
+}
+
 var acc = document.getElementsByClassName("accordion");
 for(var i=0;i<acc.length;i++){
     acc[i].onclick = function(){
@@ -165,6 +175,7 @@ for(var i=0;i<acc.length;i++){
         }
     }
 }
+
 </script>
 
 </body>
