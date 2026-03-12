@@ -94,6 +94,7 @@ footer{
     padding:15px; 
 }
 
+/* Responsive */
 @media (max-width:768px){
     .contenedor{
         flex-direction: column;
@@ -103,13 +104,14 @@ footer{
     }
 }
 
-/* BALÓN */
+/* BALON */
 #balon{
 position:fixed;
 width:70px;
 left:100px;
 top:100px;
 cursor:grab;
+z-index:999;
 }
 </style>
 </head>
@@ -126,7 +128,7 @@ cursor:grab;
 <a href="equipos.html" onclick="sonidoNav(event,'equipos.html')">Equipos</a> 
 
 <div class="dropdown"> 
-<a href="#" onclick="event.preventDefault()">Ligas</a> 
+<a href="#">Ligas</a> 
 
 <div class="dropdown-content"> 
 <a href="nba.html" onclick="sonidoNav(event,'nba.html')">NBA</a> 
@@ -180,7 +182,7 @@ En esta página podrás conocer más sobre grandes estrellas del baloncesto, sus
 <p>Inspirando a nuevas generaciones del deporte</p>
 </footer>
 
-<!-- BALÓN -->
+<!-- BALON -->
 <img src="balon-removebg-preview.png" id="balon">
 
 <!-- SONIDOS -->
@@ -192,48 +194,75 @@ En esta página podrás conocer más sobre grandes estrellas del baloncesto, sus
 function sonidoNav(event,pagina){
 event.preventDefault();
 
-let sonido = document.getElementById("sonidoCanasta");
-
-sonido.currentTime = 0;
+let sonido=document.getElementById("sonidoCanasta");
+sonido.currentTime=0;
 sonido.play();
 
 setTimeout(function(){
-window.location.href = pagina;
-},1200);
-
+window.location.href=pagina;
+},1000);
 }
 
 function sonidoInicio(){
-let inicio = document.getElementById("sonidoInicio");
-inicio.currentTime = 0;
+let inicio=document.getElementById("sonidoInicio");
+inicio.currentTime=0;
 inicio.play();
 }
 
-/* MOVIMIENTO DEL BALÓN */
+/* MOVIMIENTO DEL BALON */
 
-let balon = document.getElementById("balon");
+let balon=document.getElementById("balon");
 
-let x = 100;
-let y = 100;
+let x=100;
+let y=100;
 
-let dx = 3;
-let dy = 3;
+let dx=3;
+let dy=3;
+
+let arrastrando=false;
+
+/* agarrar balón */
+balon.addEventListener("mousedown",function(){
+arrastrando=true;
+});
+
+document.addEventListener("mouseup",function(){
+arrastrando=false;
+});
+
+document.addEventListener("mousemove",function(e){
+
+if(arrastrando){
+x=e.clientX-35;
+y=e.clientY-35;
+
+balon.style.left=x+"px";
+balon.style.top=y+"px";
+}
+
+});
+
+/* rebote */
 
 function moverBalon(){
 
-x += dx;
-y += dy;
+if(!arrastrando){
 
-if(x + 70 > window.innerWidth || x < 0){
-dx = -dx;
+x+=dx;
+y+=dy;
+
+if(x+70>window.innerWidth || x<0){
+dx=-dx;
 }
 
-if(y + 70 > window.innerHeight || y < 0){
-dy = -dy;
+if(y+70>window.innerHeight || y<0){
+dy=-dy;
 }
 
-balon.style.left = x + "px";
-balon.style.top = y + "px";
+balon.style.left=x+"px";
+balon.style.top=y+"px";
+
+}
 
 }
 
@@ -243,6 +272,3 @@ setInterval(moverBalon,20);
 
 </body>
 </html>
-
-
-
