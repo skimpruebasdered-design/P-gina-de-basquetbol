@@ -102,6 +102,15 @@ footer{
         width:100%;
     }
 }
+
+/* BALÓN */
+#balon{
+position:fixed;
+width:70px;
+left:100px;
+top:100px;
+pointer-events:none;
+}
 </style>
 </head>
 
@@ -171,6 +180,9 @@ En esta página podrás conocer más sobre grandes estrellas del baloncesto, sus
 <p>Inspirando a nuevas generaciones del deporte</p>
 </footer>
 
+<!-- BALÓN -->
+<img src="balon.png" id="balon">
+
 <!-- SONIDOS -->
 <audio id="sonidoCanasta" src="canasta.aac"></audio>
 <audio id="sonidoInicio" src="inicio.mpeg"></audio>
@@ -197,8 +209,37 @@ inicio.currentTime = 0;
 inicio.play();
 }
 
+/* MOVIMIENTO DEL BALÓN */
+
+let balon = document.getElementById("balon");
+
+let x = 100;
+let y = 100;
+
+let dx = 3;
+let dy = 3;
+
+function moverBalon(){
+
+x += dx;
+y += dy;
+
+if(x + 70 > window.innerWidth || x < 0){
+dx = -dx;
+}
+
+if(y + 70 > window.innerHeight || y < 0){
+dy = -dy;
+}
+
+balon.style.left = x + "px";
+balon.style.top = y + "px";
+
+}
+
+setInterval(moverBalon,20);
+
 </script>
 
 </body>
 </html>
-
