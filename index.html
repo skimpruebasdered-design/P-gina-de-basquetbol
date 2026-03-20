@@ -159,6 +159,17 @@ z-index:999;
 
 <a href="acerca.html" onclick="sonidoNav(event,'acerca.html')">Acerca de</a> 
 
+<!-- 🔥 NUEVO: REDES SOCIALES -->
+<div class="dropdown"> 
+<a href="#">Redes Sociales</a> 
+
+<div class="dropdown-content"> 
+<a href="https://www.instagram.com/TU_USUARIO" target="_blank" rel="noopener noreferrer">Instagram</a> 
+<a href="https://www.facebook.com/TU_USUARIO" target="_blank" rel="noopener noreferrer">Facebook</a> 
+</div>
+
+</div>
+
 </nav>
 
 <div class="contenedor"> 
@@ -196,18 +207,15 @@ En esta página podrás conocer más sobre grandes estrellas del baloncesto, sus
 </footer>
 
 <!-- BALÓN -->
-
 <img src="balon-removebg-preview.png" id="balon">
 
 <!-- SONIDOS -->
-
 <audio id="sonidoCanasta" src="canasta.aac"></audio>
 <audio id="sonidoInicio" src="inicio.mpeg"></audio>
 
 <script>
 
 function sonidoNav(event,pagina){
-
 event.preventDefault();
 
 let sonido=document.getElementById("sonidoCanasta");
@@ -218,18 +226,13 @@ sonido.play();
 setTimeout(function(){
 window.location.href=pagina;
 },1000);
-
 }
 
 function sonidoInicio(){
-
 let inicio=document.getElementById("sonidoInicio");
-
 inicio.currentTime=0;
 inicio.play();
-
 }
-
 
 /* BALÓN */
 
@@ -245,54 +248,38 @@ let tamaño=120;
 
 let arrastrando=false;
 
-
-/* MOUSE (PC) */
+/* MOUSE */
 
 balon.addEventListener("mousedown",function(){
-
 arrastrando=true;
-
 });
 
 document.addEventListener("mouseup",function(){
-
 arrastrando=false;
-
 });
 
 document.addEventListener("mousemove",function(e){
-
 if(arrastrando){
-
 x=e.clientX-(tamaño/2);
 y=e.clientY-(tamaño/2);
 
 balon.style.left=x+"px";
 balon.style.top=y+"px";
-
 }
-
 });
 
-
-/* DEDO (CELULAR) */
+/* CELULAR */
 
 balon.addEventListener("touchstart",function(){
-
 arrastrando=true;
-
 });
 
 document.addEventListener("touchend",function(){
-
 arrastrando=false;
-
 });
 
 document.addEventListener("touchmove",function(e){
-
 if(arrastrando){
-
 let dedo=e.touches[0];
 
 x=dedo.clientX-(tamaño/2);
@@ -300,38 +287,27 @@ y=dedo.clientY-(tamaño/2);
 
 balon.style.left=x+"px";
 balon.style.top=y+"px";
-
 }
-
 });
-
 
 /* REBOTE */
 
 function moverBalon(){
-
 if(!arrastrando){
-
 x+=dx;
 y+=dy;
 
 if(x+tamaño>window.innerWidth || x<0){
-
 dx=-dx;
-
 }
 
 if(y+tamaño>window.innerHeight || y<0){
-
 dy=-dy;
-
 }
 
 balon.style.left=x+"px";
 balon.style.top=y+"px";
-
 }
-
 }
 
 setInterval(moverBalon,20);
@@ -340,4 +316,3 @@ setInterval(moverBalon,20);
 
 </body>
 </html>
-
