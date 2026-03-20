@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galería de Básquet</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background-color:#ffa94d;
+}
+
+.volver{
+position:absolute;
+left:20px;
+top:20px;
+background:black;
+color:white;
+padding:10px 15px;
+text-decoration:none;
+}
+
+.volver:hover{
+background:orange;
+color:black;
+}
+
+header{
+text-align:center;
+padding:40px;
+font-family: Georgia, serif;
+}
+
+/* GALERÍA EN 3 COLUMNAS */
+.galeria{
+display:grid;
+grid-template-columns: repeat(3, 1fr); /* 3 por fila */
+gap:20px;
+padding:20px;
+}
+
+/* IMÁGENES */
+.galeria img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:10px;
+transition:0.3s;
+}
+
+/* EFECTO HOVER */
+.galeria img:hover{
+transform:scale(1.05);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.galeria{
+grid-template-columns: 1fr; /* 1 por fila en celular */
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<a class="volver" href="index.html" onclick="sonidoNav(event,'index.html')">← Volver</a>
+
+<header>
+<h1>Galería de Imágenes</h1>
+<p>Imágenes utilizadas en el sitio web</p>
+</header>
+
+<div class="galeria">
+
+<img src="curry.jpeg">
+<img src="lebron.jpeg">
+<img src="jordan.jpeg">
+
+<img src="cancha.jpeg">
+<img src="realmadrid.jpeg">
+<img src="barcelona.jpeg">
+
+<img src="baskonia.jpeg">
+<img src="valencia.jpeg">
+
+</div>
+
+<!-- AUDIO -->
+<audio id="sonidoCanasta" src="canasta.aac"></audio>
+
+<script>
+function sonidoNav(event,pagina){
+event.preventDefault();
+
+let sonido=document.getElementById("sonidoCanasta");
+
+sonido.currentTime=0;
+sonido.play();
+
+setTimeout(function(){
+window.location.href=pagina;
+},1000);
+}
+</script>
+
+</body>
+</html>
