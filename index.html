@@ -111,7 +111,6 @@ footer{
 }
 
 /* BALÓN */
-
 #balon{
 position:fixed;
 width:120px;
@@ -120,7 +119,6 @@ top:100px;
 cursor:grab;
 z-index:999;
 }
-
 </style>
 </head>
 
@@ -159,7 +157,10 @@ z-index:999;
 
 <a href="acerca.html" onclick="sonidoNav(event,'acerca.html')">Acerca de</a> 
 
-<!-- 🔥 NUEVO: REDES SOCIALES -->
+<!-- NUEVO: GALERÍA -->
+<a href="galeria.html" onclick="sonidoNav(event,'galeria.html')">Galería</a>
+
+<!-- REDES SOCIALES -->
 <div class="dropdown"> 
 <a href="#">Redes Sociales</a> 
 
@@ -206,10 +207,8 @@ En esta página podrás conocer más sobre grandes estrellas del baloncesto, sus
 <p>Inspirando a nuevas generaciones del deporte</p>
 </footer>
 
-<!-- BALÓN -->
 <img src="balon-removebg-preview.png" id="balon">
 
-<!-- SONIDOS -->
 <audio id="sonidoCanasta" src="canasta.aac"></audio>
 <audio id="sonidoInicio" src="inicio.mpeg"></audio>
 
@@ -234,8 +233,6 @@ inicio.currentTime=0;
 inicio.play();
 }
 
-/* BALÓN */
-
 let balon=document.getElementById("balon");
 
 let x=100;
@@ -247,8 +244,6 @@ let dy=3;
 let tamaño=120;
 
 let arrastrando=false;
-
-/* MOUSE */
 
 balon.addEventListener("mousedown",function(){
 arrastrando=true;
@@ -267,8 +262,6 @@ balon.style.left=x+"px";
 balon.style.top=y+"px";
 }
 });
-
-/* CELULAR */
 
 balon.addEventListener("touchstart",function(){
 arrastrando=true;
@@ -289,8 +282,6 @@ balon.style.left=x+"px";
 balon.style.top=y+"px";
 }
 });
-
-/* REBOTE */
 
 function moverBalon(){
 if(!arrastrando){
